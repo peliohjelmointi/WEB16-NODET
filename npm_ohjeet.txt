@@ -1,0 +1,5 @@
+npm init //initialisoi projektin, luo package.json
+npm install paketin nimi// tai npm i 
+(npm uninstall)
+
+npm install express
