@@ -1,0 +1,33 @@
+Encryption:
+- data voidaan muuttaa luettavasta krypttattuun (cipher text) JA päinvastoin
+- käytetään matemaattisia algoritmeja, ja salaista avainta
+- näyttää satunnaiselta datalta, eikä voi ymmärtää ilman salainta avainta
+
+Hashing:
+- yksisuuntaista, toisin kuin encryption, eli originaalia dataa ei voi palauttaa 
+  alkuperäiseen muotoon. Voidaan ainoastaan verrata hashattua johonkin 
+
+- salasanat EIVÄT KOSKAAN saisi olla kryptattuja (encrypted)
+
+
+ESIM. 
+
+kjö324kj32j4324 ja olisi kryptattu jollain tunnetulla tavall, 
+niin joku voisi selvittää että tästä tulee teksti "TAITOTALO"
+
+vs.
+
+kj324kj32432kj4 hashattuna
+- ei vastaa mitään
+-------------------------------
+SALTING (cost tai cost factor)
+
+bcrypt.salt(password,10) //10 on iteraatiokerta
+
+= 10^2 = 1024 iteraatiokerta
+= 12^2 = 4096 iteraatiokerta
+---------------------------- 10-12 on suositeltu web-applikaatioihin
+                             kompromissi turvallisuuden ja suorituskyvyn välillä
+= 17^2 = 131072 iteraatiokertaa
+
+hashays ei saisi kestää yli 1 sekuntia (hyvän UX-määrittelyn mukaisesti)
